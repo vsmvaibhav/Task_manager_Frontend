@@ -41,7 +41,7 @@ export default function UserHome({ userData, fetchUserData }) {
   const deleteTask = async (taskId) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/deleteTask/${taskId}`,
+        `https://task-manager-backend-22av.onrender.com/deleteTask/${taskId}`,
         {
           method: "DELETE",
           headers: {
@@ -66,7 +66,7 @@ export default function UserHome({ userData, fetchUserData }) {
   };
   const handleDeleteTask = (index, taskId) => {
     // Make a request to the backend to delete the task
-    fetch(`http://localhost:5000/deleteTask/${taskId}`, {
+    fetch(`https://task-manager-backend-22av.onrender.com/deleteTask/${taskId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -100,7 +100,7 @@ export default function UserHome({ userData, fetchUserData }) {
   const fetchFilteredTasks = (priority) => {
     // Fetch tasks based on user ID and priority
     // Use your API endpoint for fetching filtered tasks
-    fetch(`http://localhost:5000/getUserTasksWithPriority`, {
+    fetch(`https://task-manager-backend-22av.onrender.com/getUserTasksWithPriority`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -138,7 +138,7 @@ export default function UserHome({ userData, fetchUserData }) {
 
   const fetchTasks = async () => {
     const result = await fetch(
-      `http://localhost:5000/getUserTasks/${userData._id}`
+      `https://task-manager-backend-22av.onrender.com/getUserTasks/${userData._id}`
     );
     const taskData = await result.json();
 

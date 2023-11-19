@@ -19,7 +19,7 @@ export default function UserDetails() {
   }, []);
 
   const fetchUserData = () => {
-    fetch("http://localhost:5000/userData", {
+    fetch("https://task-manager-backend-22av.onrender.com/userData", {
       method: "POST",
       crossDomain: true,
       headers: {

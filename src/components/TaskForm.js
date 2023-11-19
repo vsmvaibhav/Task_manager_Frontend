@@ -22,7 +22,7 @@ const TaskForm = ({ onAddTask, editingTask, onClose, userObjectId }) => {
     const token = window.localStorage.getItem("token");
 
     // Use the token to identify the user
-    const result = await fetch("http://localhost:5000/add-task", {
+    const result = await fetch("https://task-manager-backend-22av.onrender.com/add-task", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
