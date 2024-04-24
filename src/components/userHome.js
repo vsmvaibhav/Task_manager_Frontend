@@ -5,6 +5,7 @@ import { BsPlus } from "react-icons/bs";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import Filter from "./Filter";
+import TimetablePlanner from "./TimetablePlanner";
 
 export default function UserHome({ userData, fetchUserData }) {
   const [showTaskForm, setShowTaskForm] = useState(false);
@@ -148,6 +149,9 @@ export default function UserHome({ userData, fetchUserData }) {
       console.error("Error fetching tasks:", taskData.data);
     }
   };
+  const handleOpenTimetable = () => {
+    window.open("/timetable", "_blank");
+  };
   return (
     <>
       <div className="navbar navbar-expand-lg">
@@ -155,12 +159,28 @@ export default function UserHome({ userData, fetchUserData }) {
           <div className="navbar-brand">{userData.fname}</div>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav ms-auto">
+              <div className="text-center nav-item">
+              <button
+                className="btn btn-primary"
+                onClick={handleOpenTimetable}
+                style={{
+                  backgroundColor: "#ffd6ffff",
+                  color: "black",
+                  border: "black",
+                  boxShadow: "1px 2px 3px 0.5px black",
+                }}
+              >
+                Open Timetable
+              </button>
+            </div>
               <div className="nav-item">
+                
+
                 <button
                   className="btn btn-primary"
                   style={{
-                    backgroundColor: "#5c015c",
-                    color: "white",
+                    backgroundColor: "#ffd6ffff",
+                    color: "black",
                     border: "black",
                     boxShadow: "1px 2px 3px 0.5px black",
                   }}
@@ -173,8 +193,8 @@ export default function UserHome({ userData, fetchUserData }) {
               <div className="nav-item">
                 <button
                   style={{
-                    backgroundColor: "#5c015c",
-                    color: "white",
+                    backgroundColor: "#ffd6ffff",
+                    color: "black",
                     border: "black",
                     boxShadow: "1px 2px 3px 0.5px black",
                   }}

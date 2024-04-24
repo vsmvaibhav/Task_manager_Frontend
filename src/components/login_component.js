@@ -1,5 +1,3 @@
-//login_component
-
 import React, { useState } from "react";
 
 export default function Login() {
@@ -36,9 +34,15 @@ export default function Login() {
       });
   }
 
+  function handleKeyDown(e) {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
+  }
+
   return (
     <div className="auth-wrapper">
-      <div className="auth-inner">
+      <div className="auth-inner" onKeyDown={handleKeyDown}>
         <form onSubmit={handleSubmit}>
           <h3>Sign In</h3>
 
@@ -65,13 +69,13 @@ export default function Login() {
           </div>
 
           <div className="d-grid" style={{ padding: "15px" }}>
-            <button type="submit" className="btn btn-primary login">
+            <button type="submit" className="btn btn-primary login text-dark">
               Submit
             </button>
           </div>
           <p className="forgot-password text-right">
             <button
-              className="login_sign_up_btn"
+              className="login_sign_up_btn text-dark"
               style={{ background: "transparent", border: "none" }}
             >
               <a href="/sign-up" style={{ textDecoration: "none" }}>

@@ -1,4 +1,33 @@
+:root {
+  --lowPriorityColor: #7CFFC8;
+  --mediumPriorityColor: yellow;
+  --highPriorityColor: #F20B0B;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.date-navigation > div {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #e9dfe1;
+}
+
+.date-navigation > div.selected-date {
+  font-weight: bold;
+  border: 3px solid black;
+  color: #ccc;
+  background-color: #8538A6;
+}
+
 .task-list-container {
+  color: #000000;
   padding-left: 50px;
   padding-right: 50px;
   position: absolute;
@@ -7,37 +36,61 @@
   width: 100%;
 }
 
-.edit_button,
-.delete_button {
-  width: 30px;
-  border-radius: 8px;
-  margin: 0 5px;
-  padding-bottom: 5px;
-  background-color: #ffc3ff;
+.task-list-day {
+  margin-bottom: 20px;
 }
 
-.complete_button,
-.sort_button {
-  border-radius: 8px;
-  margin: 5px;
-  padding-bottom: 5px;
-  background-color: #ffc3ff;
-}
-
-.tasklist_li {
-  list-style: none;
-  display: flex;
-  margin-bottom: 30px;
+.task-box {
+  margin-bottom: 20px;
   padding: 10px;
-  color: black;
-  background-color: #b8c0ffff;
-  border: 0.5px solid #000000;
+  background-color: #BCB0B2;
+  border: 1px solid #000000;
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px;
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  transition: opacity 0.5s ease-in-out;
+}
+
+.task-info div {
+  margin-right: 10px;
 }
 
 .completed {
   opacity: 0.5; /* Adjust the opacity value as needed */
+}
+
+.edit_button,
+.delete_button,
+.complete_button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.edit_button:hover,
+.delete_button:hover,
+.complete_button:hover {
+  color: #333;
+}
+.priority-tag {
+  border: 2px 2px 2px 2px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.low-priority {
+  background-color: var(--lowPriorityColor);
+}
+
+.medium-priority {
+  background-color: var(--mediumPriorityColor);
+}
+
+.high-priority {
+  background-color: var(--highPriorityColor);
 }

@@ -7,7 +7,7 @@
 }
 body {
   /* background: rgb(227, 230, 255) !important; */
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right bottom,
     #340284,
     #1b1c81,
@@ -21,7 +21,7 @@ body {
     #00454e,
     #004845,
     #004a3b
-  );
+  ); */
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -46,7 +46,7 @@ form {
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  background: #ffd6ffff;
+  background: #BCB0B2;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(14.5px);
   -webkit-backdrop-filter: blur(14.5px);
@@ -56,7 +56,8 @@ form {
 
 .signup,
 .login {
-  background-color: #5c015c !important;
+  background-color: #ffd6ffff !important;
+  color: black;
 }
 h1,
 h2,
@@ -80,7 +81,7 @@ html,
 
 .navbar {
   margin: 10px;
-  background-color: #ffd6ffff;
+  background-color: #BCB0B2;
   color: rgb(0, 213, 213);
   height: 60px;
   border-radius: 10px; /* Adjust the radius as needed */

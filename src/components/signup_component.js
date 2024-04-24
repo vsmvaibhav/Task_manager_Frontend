@@ -88,8 +88,8 @@ export default function SignUp() {
             />
           </div>
 
-          <div className="d-grid" style={{ padding: "5px" }}>
-            <button type="submit" className="btn btn-primary signup">
+          <div className="d-grid" style={{ padding: "5px" ,color: "black"}}>
+            <button type="submit" className="btn btn-primary signup text-dark">
               Sign Up
             </button>
           </div>

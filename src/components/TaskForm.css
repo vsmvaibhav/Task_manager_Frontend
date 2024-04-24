@@ -10,12 +10,12 @@
   display: flex;
   flex-direction: column;
   margin: 5%;
-  margin-top: 500px;
+  margin-top: 30px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  background: #bbd0ffff;
+  background: #e9dfe1;
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(14.5px);
   -webkit-backdrop-filter: blur(14.5px);
@@ -37,6 +37,6 @@
   width: 100%;
 }
 .Addtask_button {
-  color: white;
-  background-color: #5c015c;
+  color: black;
+  background-color: #ffd6ffff;
 }
