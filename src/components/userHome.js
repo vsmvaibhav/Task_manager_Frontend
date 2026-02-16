@@ -5,7 +5,6 @@ import { BsPlus } from "react-icons/bs";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import Filter from "./Filter";
-import TimetablePlanner from "./TimetablePlanner";
 
 export default function UserHome({ userData, fetchUserData }) {
   const [showTaskForm, setShowTaskForm] = useState(false);
@@ -25,19 +24,10 @@ export default function UserHome({ userData, fetchUserData }) {
 
   const handleAddTask = async (taskData) => {
     if (editingTask) {
-      // If editingTask is present, delete the existing task
       await deleteTask(editingTask._id);
     }
-
-    // Add the updated task
-    const updatedTasks = [...tasks, taskData];
-    setTasks(updatedTasks);
-
-    // Save tasks to local storage
-    window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
-
-    // Reset the editingTask state
     setEditingTask(null);
+    await fetchTasks();
   };
   const deleteTask = async (taskId) => {
     try {
@@ -65,8 +55,7 @@ export default function UserHome({ userData, fetchUserData }) {
       console.error("Error deleting task:", error.message);
     }
   };
-  const handleDeleteTask = (index, taskId) => {
-    // Make a request to the backend to delete the task
+  const handleDeleteTask = (taskId) => {
     fetch(`https://task-manager-backend-22av.onrender.com/deleteTask/${taskId}`, {
       method: "DELETE",
       headers: {
@@ -81,10 +70,8 @@ export default function UserHome({ userData, fetchUserData }) {
       })
       .then((data) => {
         if (data.status === "ok") {
-          // Update the state to reflect the deletion
-          const updatedTasks = [...tasks];
-          updatedTasks.splice(index, 1);
-          setTasks(updatedTasks);
+          // Auto-refresh tasks from backend
+          fetchTasks();
         } else {
           console.error("Error deleting task:", data.data);
         }
@@ -126,10 +113,9 @@ export default function UserHome({ userData, fetchUserData }) {
 
   useEffect(() => {
     if (userData && userData._id) {
-      // Fetch all tasks initially
       fetchTasks();
     }
-  });
+  }, [userData, userData?._id]);
   const handleFilterChange = (selectedPriority) => {
     setFilterPriority(selectedPriority);
 
@@ -149,9 +135,6 @@ export default function UserHome({ userData, fetchUserData }) {
       console.error("Error fetching tasks:", taskData.data);
     }
   };
-  const handleOpenTimetable = () => {
-    window.open("/timetable", "_blank");
-  };
   return (
     <>
       <div className="navbar navbar-expand-lg">
@@ -159,30 +142,15 @@ export default function UserHome({ userData, fetchUserData }) {
           <div className="navbar-brand">{userData.fname}</div>
           <div className="collapse navbar-collapse" id="navbarNav">
             <div className="navbar-nav ms-auto">
-              <div className="text-center nav-item">
-              <button
-                className="btn btn-primary"
-                onClick={handleOpenTimetable}
-                style={{
-                  backgroundColor: "#ffd6ffff",
-                  color: "black",
-                  border: "black",
-                  boxShadow: "1px 2px 3px 0.5px black",
-                }}
-              >
-                Open Timetable
-              </button>
-            </div>
               <div className="nav-item">
                 
 
                 <button
                   className="btn btn-primary"
                   style={{
-                    backgroundColor: "#ffd6ffff",
-                    color: "black",
-                    border: "black",
-                    boxShadow: "1px 2px 3px 0.5px black",
+                    backgroundColor: "#4a90e2",
+                    color: "white",
+                    border: "none",
                   }}
                   onClick={() => setShowTaskForm(true)}
                 >
@@ -193,12 +161,11 @@ export default function UserHome({ userData, fetchUserData }) {
               <div className="nav-item">
                 <button
                   style={{
-                    backgroundColor: "#ffd6ffff",
-                    color: "black",
-                    border: "black",
-                    boxShadow: "1px 2px 3px 0.5px black",
+                    backgroundColor: "#f44336",
+                    color: "white",
+                    border: "none",
                   }}
-                  className="btn btn-outline-danger"
+                  className="btn"
                   type="button"
                   onClick={logOut}
                 >
