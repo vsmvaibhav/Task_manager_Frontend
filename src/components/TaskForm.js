@@ -65,17 +65,12 @@ const TaskForm = ({ onAddTask, editingTask, onClose, userObjectId }) => {
     const data = await result.json();
 
     if (data.status === "ok") {
-      // Task created successfully, you can now update the UI or take any other action
       onAddTask(data.data);
-      const existingTasks =
-        JSON.parse(window.localStorage.getItem("tasks")) || [];
-      const updatedTasks = [...existingTasks, data.data];
-      window.localStorage.setItem("tasks", JSON.stringify(updatedTasks));
       setTask("");
       setPriority("low");
       setDueDate("");
-      setSubmitting(false); // Reset submitting state after successful submission
-      onClose(); // Close the form after successful submission
+      setSubmitting(false);
+      onClose();
     } else {
       // Handle error case
       console.error("Error creating task:", data.data);
