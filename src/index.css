@@ -6,26 +6,11 @@
   box-sizing: border-box;
 }
 body {
-  /* background: rgb(227, 230, 255) !important; */
-  /* background-image: linear-gradient(
-    to right bottom,
-    #340284,
-    #1b1c81,
-    #00277c,
-    #002e73,
-    #003368,
-    #003763,
-    #003b5d,
-    #003d56,
-    #004154,
-    #00454e,
-    #004845,
-    #004a3b
-  ); */
   min-height: 100vh;
   display: flex;
   font-weight: 400;
   font-family: "Fira Sans", sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .auth-wrapper {
@@ -40,24 +25,30 @@ body {
 }
 
 form {
-  /* margin: 10% 35%; */
   position: relative;
   padding: 20px;
   display: flex;
   flex-direction: column;
   max-width: 500px;
-  background: #BCB0B2;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
   backdrop-filter: blur(14.5px);
   -webkit-backdrop-filter: blur(14.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .signup,
 .login {
-  background-color: #ffd6ffff !important;
-  color: black;
+  background-color: #4a90e2 !important;
+  color: #ffffff;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.signup:hover,
+.login:hover {
+  background-color: #357abd !important;
 }
 h1,
 h2,
@@ -81,11 +72,12 @@ html,
 
 .navbar {
   margin: 10px;
-  background-color: #BCB0B2;
-  color: rgb(0, 213, 213);
+  background-color: #ffffff;
+  color: #333333;
   height: 60px;
-  border-radius: 10px; /* Adjust the radius as needed */
-  border: 2px solid black;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
