@@ -12,15 +12,13 @@
   margin: 5%;
   margin-top: 30px;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
   max-width: 500px;
-  background: #e9dfe1;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background: #ffffff;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(14.5px);
   -webkit-backdrop-filter: blur(14.5px);
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid #e0e0e0;
 }
 
 .taskForm_label {
@@ -32,11 +30,32 @@
 .taskForm_select,
 .Addtask_button {
   border-radius: 5px;
-  border: 2px solid #b375f296;
+  border: 1px solid #e0e0e0;
   margin: 5px;
   width: 100%;
+  padding: 8px;
 }
+
+.taskForm_input:focus,
+.taskForm_select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
 .Addtask_button {
-  color: black;
-  background-color: #ffd6ffff;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.Addtask_button:hover {
+  background-color: #357abd;
+}
+
+.Addtask_button:disabled {
+  background-color: #b0bec5;
+  cursor: not-allowed;
 }
