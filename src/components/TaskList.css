@@ -1,0 +1,126 @@
+:root {
+  --lowPriorityColor: #4caf50;
+  --mediumPriorityColor: #ff9800;
+  --highPriorityColor: #f44336;
+}
+
+.date-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.date-navigation > div {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.date-navigation > div:hover {
+  background-color: #f5f5f5;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.date-navigation > div.selected-date {
+  font-weight: bold;
+  border: 2px solid #4a90e2;
+  color: #ffffff;
+  background-color: #4a90e2;
+}
+
+.task-list-container {
+  color: #000000;
+  padding-left: 50px;
+  padding-right: 50px;
+  position: absolute;
+  margin-top: 400px;
+  height: 100%;
+  width: 100%;
+}
+
+.task-list-day {
+  margin-bottom: 20px;
+}
+
+.task-box {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.task-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.task-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-info div {
+  margin-right: 10px;
+}
+
+.completed {
+  opacity: 0.5; /* Adjust the opacity value as needed */
+}
+
+.edit_button,
+.delete_button,
+.complete_button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.edit_button:hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.delete_button:hover {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.complete_button {
+  background-color: #4caf50;
+  color: white;
+  margin-left: 10px;
+}
+
+.complete_button:hover {
+  background-color: #45a049;
+}
+.priority-tag {
+  border: 2px 2px 2px 2px solid black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.low-priority {
+  background-color: var(--lowPriorityColor);
+}
+
+.medium-priority {
+  background-color: var(--mediumPriorityColor);
+}
+
+.high-priority {
+  background-color: var(--highPriorityColor);
+}
